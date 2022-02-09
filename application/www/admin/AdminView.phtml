@@ -1,0 +1,36 @@
+<h2><i class="fa fa-cogs"></i> Panneau de configuration</h2>
+<form class="generic-form" action="<?= $requestUrl ?>/order" method="POST">
+<fieldset >
+<legend><i class="fa fa-lock"> </i> Historique des commandes</legend>
+<table class="generic-table table table-bordered">
+<thead>
+    
+    <tr>
+      <th scope="col"> Num Com</th>
+      <th scope="col">Num user</th>
+      <th scope="col">Date création</th>
+      <th scope="col">Date succes</th>
+      <th scope="col">tva</th>
+      <th scope="col">prix tva</th>
+      <th scope="col">total</th>
+    </tr>
+  </thead>
+        <tbody>
+            <?php foreach($info as $value) : ?>
+        <tr>
+        <td><a href="#"><?= $value['Id'] ?></a></td>
+        <td><a href="#"><?= $value['User_Id'] ?></a></td>
+        <td><?= $value['CreationTimestamp'] ?></td>
+        <td><?= $value['CompleteTimestamp'] ?></td>
+        <td><?= $value['TaxRate'] ?> %</td>
+        <td><?= $value['TaxAmount'] ?> €</td>
+        <td><?= $value['TotalAmount'] ?> €</td>
+        </tr>
+        <?php endforeach ; ?>
+        </tbody>
+        </table>
+</fieldset>
+</form>
+<fieldset >
+<legend> Details</legend>
+</fieldset>

@@ -1,0 +1,41 @@
+
+
+
+<form>
+  <fieldset>
+        <legend>Récaputilatif de la commande</legend>
+        
+        <?php if (empty($panier) ): ?>
+        <h2>Votre panier est vide</h2>
+        <?php else : ?>
+     <table class="generic-table">
+         <thead>
+            <tr>
+             <th>Quantité</th>
+            <th>Produit</th>
+            <th>Prix Unitaire </th>
+            <th>Prix totale </th>
+
+         </tr>  
+         </thead>
+         <tbody>
+             <?php foreach($panier as $key=>$val): ?>
+          
+             <tr>
+                 <td><?= $val['quantity'] ?></td>
+                 <td><?= $val['name'] ?></td>
+                 <td><?= $val['salePrice'] ?></td>
+                 <td><?= $val['totalPrice'] ?></td>
+                 <td><a class="button button-cancel delete" href="<?=$key?>"><i class="fas fa-trash-alt" ></i></a></td>
+                 
+             </tr>
+             <?php endforeach; ?>
+         </tbody>
+     </table>
+     </fieldset>
+     
+<button class="button button-primary" id="validator">Valider votre commande</button>
+<button class="button button-cancel">Annuler</button>
+<?php endif; ?>
+
+</form>

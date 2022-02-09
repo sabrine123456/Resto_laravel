@@ -1,0 +1,87 @@
+<h2><i class="fas fa-user">Création d'un compte client </i></h2>
+<form class="generic-form" method="post" action="<?= $requestUrl ?>/user">
+    <fieldset>
+        <legend><i class="fas fa-book">Identité et coordonnée</i></legend>
+    <ul>
+    <li>
+        <label >Nom :</label>
+        <input type="text" name="nom"/>
+    </li>
+    <li> 
+        <label >Prénom :</label>
+        <input type="text" name="prenom"/>
+    </li>
+    <li>
+        <label>Date de naissance :</label>
+        <select id="day" name="day">
+             <?php for($i=1;$i<=31;$i++): ?>
+             <option value="<?=$i?>"><?=$i?></option>
+            <?php endfor ?>
+        </select> 
+        <span>/</span>
+        <select id="month" name="month">
+              <option selected>Janvier</option>
+              <option>Février</option>
+              <option>Mars</option>
+              <option>Avril</option>
+              <option>Mai</option>
+              <option>Juin</option>
+              <option>Juillet</option>
+              <option>Août</option>
+              <option>Septembre</option>
+              <option>Octobre</option>
+              <option>Novembre</option>
+              <option>Décembre</option>
+        </select>
+         <span>/</span>
+        
+        <select id="year" name="year">
+            <?php for($i=1990;$i<=date('Y')+10;$i++): ?>
+            <option value="<?=$i?>"><?=$i?></option>
+            <?php endfor ?>
+        </select>
+    </li>
+    <li>
+        <label >Adresse :</label>
+        <textarea id="story" name="adresse"
+          rows="5" cols="33">
+        
+        </textarea>
+    </li>
+    <li>
+         <label >Ville :</label>
+        <input type="text" name="ville"/>
+    </li>
+      <li>
+         <label >Code postale :</label>
+        <input type="text" name="code" class="zip-code"/>
+    </li>
+    <li>
+        <label >Pays :</label>
+        <input type="text" name="pays"/>
+    </li>
+     <li>
+        <label >Téléphone :</label>
+        <input type="tel" name="tel"/>
+    </li>
+  </ul> 
+  </fieldset>
+  <fieldset>
+      <legend><i class="fas fa-lock"> Informations d'authentification</i></legend>
+      <ul>
+        <li>
+            <label >E-mail :</label>
+            <input type="text" name="mail"/>
+        </li>
+        <li> 
+            <label >Motde pass :</label>
+            <input type="password" name="mdp"/>
+        </li>
+    </ul>
+  </fieldset>
+  <button class="button button-primary" type="submit">Créer le compte</button>
+ <button class="button button-danger" type="reset">Annuler</button>
+</form>
+
+
+   

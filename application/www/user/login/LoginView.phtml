@@ -1,0 +1,18 @@
+<h2><i class="fas fa-user">Se conecter avec un compte utilisateur </i></h2>
+<form class="generic-form" method="post" action="<?= $requestUrl ?>/user/login">
+    <fieldset>
+        <legend><i class="fas fa-book">Informations d'authentification</i></legend>
+    <ul>
+    <li>
+        <label >E-mail :</label>
+        <input type="text" name="email"/>
+    </li>
+    <li> 
+        <label >Mot de passe :</label>
+        <input type="password" name="mdep"/>
+    </li>
+    </ul>
+    </fieldset>
+     <button class="button button-primary" type="submit">Connexion</button>
+  <button class="button button-danger" type="reset">Annuler</button>
+</form>

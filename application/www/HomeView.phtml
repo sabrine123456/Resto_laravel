@@ -1,0 +1,27 @@
+<!-- Message de notification -->
+
+<!-- Code HTML à écrire -->
+<!-- Message de notification -->
+<?php if($flashBag->hasMessages() == true): ?>
+    <aside id="notice" class="notice">
+        <?php foreach($flashBag->fetchMessages() as $message): ?>
+            <p><?= $message ?></p>
+        <?php endforeach ?>
+    </aside>
+<?php endif; ?>
+<!-- Liste des aliments -->
+<table class="generic-table meal-list">
+    <caption>Carte du restaurant</caption>
+    <tbody>
+         <?php foreach ( $meals as $value) : ?>
+        <tr>
+       
+        <td> <img src="<?= $wwwUrl ?>/images/meals/<?= $value['Photo']?>"></img></td>
+        <td> <h3><?= $value['Name'] ?></h3> <p><?= $value['Description'] ?></p></td>
+        <td><h3><?= number_format($value['SalePrice'],2) ?> €</h3></td>
+        
+        </tr>
+        <?php endforeach ; ?>
+       
+    </tbody>
+</table>

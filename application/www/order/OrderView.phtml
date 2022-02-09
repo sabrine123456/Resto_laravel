@@ -1,0 +1,38 @@
+<h2><i class="fas fa-shopping-cart"></i> Passer une Commande</h2>
+<form method="post" class="generic-form">
+    <fieldset>
+        <legend>Ajouter un article</legend>
+        <ul>
+            <li>
+                 <input type="text" class="hidden" value="" id="hide"/>
+            </li>
+            <li>
+                <label>Nom :</label>
+                <select id="select">
+                   <?php foreach ($meals as $meal) : ?>
+                    <option value="<?= $meal['Id'] ?>"> <?= $meal['Name'] ?></option>
+                    <?php endforeach ; ?>
+                </select>
+            </li>
+            <li>
+              <article id="meal-details" class="meal-details no-left-label">
+                        <img src="" alt="Photo de produit" id="photo">
+                        <p id="description"></p>
+                        <span >Prix: <strong id="prix"> €</strong></span>
+                </article> 
+            </li>
+            <li>
+                <label>Quantité :</label>
+                <input type="text" id="quantité"/>
+            </li>
+        </ul>
+        <button class="button button-primary" id="ajout" >Ajouter</button>
+    </fieldset>
+</form>
+<form>
+
+     <section id="order-summary">
+         
+     </section>
+  
+</form>

@@ -1,0 +1,58 @@
+<h2>Ajout d'un produit alimentaire au catalogue</h2>
+<form method='POST' action="<?= $requestUrl ?>/admin/Meal">
+<fieldset>
+<legend>Caractéristiques</legend>
+    <label for="Name">Nom:</label>
+        <input id="Name" type="text" name="Name"  data-required data-name="Nom">
+    <br>
+    <br>
+    
+    <label for="Description">Description:</label>
+        <textarea name="Description" id="Description" rows="5" cols="33"></textarea>
+    <br>
+    <br>
+    <label for="Photo">Photo:</label>
+        <input type="file" id="Photo" name="Photo" value="Choose File">
+<p>Merci de renommer le fichier de la photo avec le nom de l'aliment avant de l'envoyer</p>
+</fieldset>
+<fieldset>
+    <legend>Approvisionnement</legend>
+        <label for="QuantityInStock">Stock initial:</label>
+        <input id="QuantityInStock" name="QuantityInStock" type="text">
+    <br>
+    <br>
+        <label for="BuyPrice">Prix d'achat:<label>
+        <input id="BuyPrice" name="BuyPrice" type="text">€
+    <br>
+    <br>
+        <label for="SalePrice">Prix de vente:<label>
+        <input id="SalePrice" name="SalePrice" type="text">€
+</fieldset>
+<button type="submit" class="button button-primary"> Ajouter</button>
+<a class="button button-cancel small" href="<?= $requestUrl ?>">Annuler</a>
+</form>
+<form>
+<fieldset>
+<legend>Retirer articles</legend>
+
+<table class="generic-table meal-list">
+    <caption>Carte du restaurant</caption>
+    <tbody>
+         <?php foreach ( $meals as $value) : ?>
+        <tr>
+       
+       
+        <td> <h3><?= $value['Name'] ?></h3></td>
+        <td><h3><?= number_format($value['SalePrice'],2) ?> €</h3> </td>
+        <td><input type="checkbox" id="scales" name="scales"></td>
+        </tr>
+        
+        <?php endforeach ; ?>
+       
+    </tbody>
+</table>
+</fieldset>
+
+<button class="button button-primary" type="submit">Supprimer</button>
+<button class="button button-cancel" type="reset"> Annuler </button>
+</form>
